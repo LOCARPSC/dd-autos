@@ -1,0 +1,368 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --red: #e32626;
+    --dark: #090b0f;
+    --dark-light: #14181d;
+    --white: #ffffff;
+    --gray: #6b7280;
+    --light: #f6f6f6;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #111;
+    background: var(--white);
+}
+
+a {
+    text-decoration: none;
+}
+
+/* HEADER */
+.navbar {
+    height: 105px;
+    padding: 0 6%;
+    background: var(--dark);
+    display: flex;
+    align-items: center;
+    gap: 55px;
+    color: white;
+}
+
+.logo {
+    width: 180px;
+    color: white;
+    font-weight: 900;
+    font-style: italic;
+    line-height: .8;
+}
+
+.logo span {
+    display: block;
+    font-size: 42px;
+    color: var(--red);
+    letter-spacing: -4px;
+    text-shadow: 2px 2px white;
+}
+
+.logo small {
+    display: block;
+    margin-left: 28px;
+    margin-top: 5px;
+    color: white;
+    font-size: 19px;
+    letter-spacing: 2px;
+}
+
+nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    gap: 38px;
+}
+
+nav a {
+    color: #eee;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 38px 0 12px;
+    border-bottom: 3px solid transparent;
+    transition: .25s;
+}
+
+nav a:hover,
+nav a.active {
+    border-bottom-color: var(--red);
+}
+
+.phone,
+.call-button {
+    background: var(--red);
+    color: white;
+    font-weight: 800;
+    padding: 16px 25px;
+    border-radius: 3px;
+}
+
+/* HERO */
+.hero {
+    min-height: 475px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background:
+        linear-gradient(90deg, rgba(0,0,0,.92), rgba(0,0,0,.65), rgba(0,0,0,.15)),
+        url("https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=2000&q=85")
+        center / cover no-repeat;
+}
+
+.hero-content {
+    position: relative;
+    width: 650px;
+    margin-left: 7%;
+    color: white;
+}
+
+.eyebrow {
+    font-size: 15px;
+    letter-spacing: 5px;
+    font-weight: 800;
+    margin-bottom: 14px;
+}
+
+.eyebrow.red {
+    color: var(--red);
+}
+
+.hero h1 {
+    font-size: clamp(48px, 6vw, 72px);
+    line-height: .94;
+    letter-spacing: -2px;
+    font-weight: 950;
+    margin-bottom: 18px;
+}
+
+.hero h1 span {
+    color: white;
+}
+
+.subtitle {
+    font-size: 23px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.description {
+    max-width: 570px;
+    line-height: 1.6;
+    font-size: 17px;
+    color: #ddd;
+}
+
+/* CONTACT */
+.contact-section {
+    padding: 70px 7%;
+}
+
+.contact-intro {
+    max-width: 700px;
+    margin-bottom: 45px;
+}
+
+.contact-intro h2 {
+    font-size: 44px;
+    line-height: .95;
+    margin: 7px 0 18px;
+}
+
+.contact-intro > p:last-child {
+    color: var(--gray);
+    font-size: 17px;
+    line-height: 1.6;
+    max-width: 620px;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.contact-card {
+    min-height: 145px;
+    border: 1px solid #ddd;
+    padding: 28px;
+    display: flex;
+    align-items: flex-start;
+    gap: 22px;
+    background: white;
+    transition: .25s;
+}
+
+.contact-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0,0,0,.09);
+    border-color: #bbb;
+}
+
+.contact-icon {
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+    border-radius: 50%;
+    background: #11151a;
+    color: white;
+    display: grid;
+    place-items: center;
+    font-size: 23px;
+}
+
+.contact-card h3 {
+    font-size: 15px;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.contact-card a {
+    color: var(--red);
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.contact-card p,
+.contact-card span {
+    color: var(--gray);
+    line-height: 1.55;
+    font-size: 14px;
+}
+
+.contact-card span {
+    display: block;
+    margin-top: 5px;
+}
+
+/* CTA */
+.simple-cta {
+    background:
+        linear-gradient(rgba(0,0,0,.83), rgba(0,0,0,.83)),
+        url("https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=2000&q=85")
+        center / cover no-repeat;
+    color: white;
+    text-align: center;
+    padding: 75px 20px;
+}
+
+.simple-cta h2 {
+    font-size: 39px;
+    margin: 8px 0 10px;
+}
+
+.simple-cta p:not(.eyebrow) {
+    color: #ddd;
+    margin-bottom: 25px;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--red);
+    color: white;
+    padding: 16px 28px;
+    font-weight: 900;
+    border-radius: 3px;
+    transition: .25s;
+}
+
+.btn:hover {
+    background: #bb1717;
+    transform: translateY(-2px);
+}
+
+/* FOOTER */
+footer {
+    background: var(--dark);
+    color: white;
+    padding: 30px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .logo {
+    width: 140px;
+}
+
+footer .logo span {
+    font-size: 30px;
+}
+
+footer .logo small {
+    font-size: 15px;
+    margin-left: 22px;
+}
+
+footer p {
+    color: #aaa;
+    font-size: 13px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 950px) {
+    .navbar {
+        height: auto;
+        padding: 20px 5%;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    nav {
+        order: 3;
+        width: 100%;
+        justify-content: flex-start;
+        overflow-x: auto;
+        gap: 22px;
+    }
+
+    nav a {
+        padding: 8px 0;
+        white-space: nowrap;
+    }
+
+    .phone {
+        margin-left: auto;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .phone {
+        display: none;
+    }
+
+    .hero {
+        min-height: 520px;
+    }
+
+    .hero-content {
+        width: auto;
+        margin: 0 7%;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .description {
+        font-size: 15px;
+    }
+
+    .contact-section {
+        padding: 50px 6%;
+    }
+
+    .contact-intro h2,
+    .simple-cta h2 {
+        font-size: 32px;
+    }
+
+    .contact-grid {
+        gap: 15px;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 18px;
+        text-align: center;
+    }
+}
